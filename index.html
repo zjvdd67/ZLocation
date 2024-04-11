@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZLocation - Location de Véhicules</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('fdsitejpeg.jpeg'); /* Chemin vers votre image de fond */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white; /* Texte en blanc */
+            font-size: 18px; /* Taille de police générale */
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.7); /* Ajoute une légère opacité pour que le texte soit plus lisible */
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.7); /* Ajoute une légère opacité pour que le texte soit plus lisible */
+            padding: 10px;
+            text-align: center;
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        nav a {
+            color: white; /* Texte en blanc */
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 20px; /* Taille de police pour les liens de navigation */
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+            animation: zoomIn 1s ease-out;
+        }
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px; /* Augmentation de l'espace au-dessus des images */
+        }
+        .image-container div {
+            margin-top: 20px; /* Abaissement des cadres */
+        }
+        .image-container img {
+            width: 300px; /* Augmentation de la largeur des images */
+            height: auto; /* Hauteur automatique pour maintenir le ratio */
+            object-fit: cover;
+            border: 2px solid #000000;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.7); /* Ajoute une légère opacité pour que le texte soit plus lisible */
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 16px; /* Taille de police pour le pied de page */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="font-size: 3em;">ZLocation</h1>
+    </header>
+    <nav>
+        <a href="#">Accueil</a>
+        <a href="#">Véhicules</a>
+        <a href="#">Motos</a>
+        <a href="#">À propos</a>
+        <a href="#contact">Contact</a> <!-- Utilisation d'une ancre -->
+    </nav>
+    <section>
+        <h2 style="font-size: 2.5em;">Bienvenue chez ZLocation !</h2>
+        <p style="font-size: 1.2em;">Nous proposons plusieurs véhicules dans notre parc automobile à des prix abordables.</p>
+        <div class="image-container">
+            <div>
+                <img src="zloc.jpg" alt="Image 1">
+                <p> Retrouvez notre Agence à Dubai !</p>
+            </div>
+            <div>
+                <img src="zloc2.jpg" alt="Image 2">
+                <p>Retrouvez notre Agence à Paris !</p>
+            </div>
+            <div>
+                <img src="zloc5jpg.jpg" alt="Image 3">
+                <p>Retrouvez notre Agence à Las Vegas !</p>
+            </div>
+        </div>
+    </section>
+    <footer id="contact"> <!-- Définition de l'ancre -->
+        <p>&copy; 2024 ZLocation</p>
+    </footer>
+</body>
+</html>
