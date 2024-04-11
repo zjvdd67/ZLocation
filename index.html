@@ -15,6 +15,7 @@
             background-repeat: no-repeat;
             color: white; /* Texte en blanc */
             font-size: 18px; /* Taille de police générale */
+            transition: all 0.5s; /* Animation pour tous les éléments */
         }
         header {
             background-color: rgba(0, 0, 0, 0.7); /* Ajoute une légère opacité pour que le texte soit plus lisible */
@@ -37,6 +38,9 @@
             padding: 10px;
             text-align: center;
             animation: slideIn 1s ease-out;
+            white-space: nowrap; /* Empêcher le retour à la ligne */
+            overflow-x: auto; /* Activer le défilement horizontal */
+            -webkit-overflow-scrolling: touch; /* Effet de défilement plus fluide sur les appareils mobiles */
         }
         @keyframes slideIn {
             from {
@@ -53,32 +57,44 @@
             text-decoration: none;
             margin: 0 10px;
             font-size: 20px; /* Taille de police pour les liens de navigation */
+            transition: color 0.3s; /* Animation pour la couleur du texte */
+        }
+        nav a:hover {
+            color: #ffcc00; /* Couleur du texte au survol */
+        }
+        nav a:active {
+            transform: scale(0.95); /* Réduire la taille du lien au clic */
         }
         section {
             padding: 20px;
             text-align: center;
-            animation: zoomIn 1s ease-out;
+            animation: fadeIn 1s ease-out, zoomIn 1s ease-out;
+            opacity: 0; /* Définir l'opacité à 0 au départ */
+            transform: translateY(20px); /* Déplacer la section vers le bas au départ */
+            transition: opacity 0.5s, transform 0.5s; /* Ajouter une transition pour l'opacité et la transformation */
+            animation-fill-mode: forwards; /* Garder le dernier style de l'animation après la fin */
         }
         @keyframes zoomIn {
             from {
-                opacity: 0;
                 transform: scale(0.5);
             }
             to {
-                opacity: 1;
                 transform: scale(1);
             }
         }
         .image-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-around;
             margin-top: 40px; /* Augmentation de l'espace au-dessus des images */
         }
         .image-container div {
             margin-top: 20px; /* Abaissement des cadres */
+            flex-basis: calc(30% - 20px); /* Répartir les cadres sur 3 colonnes */
+            max-width: calc(30% - 20px); /* Limiter la largeur des cadres */
         }
         .image-container img {
-            width: 300px; /* Augmentation de la largeur des images */
+            width: 100%; /* Ajuster la largeur des images */
             height: auto; /* Hauteur automatique pour maintenir le ratio */
             object-fit: cover;
             border: 2px solid #000000;
@@ -100,32 +116,111 @@
         <h1 style="font-size: 3em;">ZLocation</h1>
     </header>
     <nav>
-        <a href="#">Accueil</a>
-        <a href="#">Véhicules</a>
-        <a href="#">Motos</a>
-        <a href="#">À propos</a>
-        <a href="#contact">Contact</a> <!-- Utilisation d'une ancre -->
+        <a href="#accueil">Accueil</a>
+        <a href="#vehicules" onclick="accelerateScroll()">Véhicules</a>
+        <a href="#motos">Motos</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
     </nav>
-    <section>
+    <section id="accueil">
         <h2 style="font-size: 2.5em;">Bienvenue chez ZLocation !</h2>
         <p style="font-size: 1.2em;">Nous proposons plusieurs véhicules dans notre parc automobile à des prix abordables.</p>
         <div class="image-container">
+            <!-- Ajoutez vos images ici -->
             <div>
-                <img src="zloc.jpg" alt="Image 1">
-                <p> Retrouvez notre Agence à Dubai !</p>
+                <img src="ACC1.jpg" alt="Photo 1">
             </div>
             <div>
-                <img src="zloc2.jpg" alt="Image 2">
-                <p>Retrouvez notre Agence à Paris !</p>
+                <img src="ACC2.jpg" alt="Photo 2">
             </div>
             <div>
-                <img src="zloc5jpg.jpg" alt="Image 3">
-                <p>Retrouvez notre Agence à Las Vegas !</p>
+                <img src="ACC3.jpg" alt="Photo 3">
             </div>
         </div>
     </section>
-    <footer id="contact"> <!-- Définition de l'ancre -->
+    <section id="vehicules">
+        <h2 style="font-size: 2.5em;">Nos Véhicules</h2>
+        <div class="image-container">
+            <!-- Ajoutez vos images ici -->
+            <div>
+                <img src="vehicule1.jpg" alt="Véhicule 1">
+            </div>
+            <div>
+                <img src="vehicule2.jpg" alt="Véhicule 2">
+            </div>
+            <div>
+                <img src="vehicule3.jpg" alt="Véhicule 3">
+            </div>
+            <div>
+                <img src="vehicule4.jpg" alt="Véhicule 4">
+            </div>
+            <div>
+                <img src="vehicule5.jpg" alt="Véhicule 5">
+            </div>
+            <div>
+                <img src="vehicule6.jpg" alt="Véhicule 6">
+            </div>
+            <div>
+                <img src="vehicule7.jpg" alt="Véhicule 7">
+            </div>
+            <div>
+                <img src="vehicule8.jpg" alt="Véhicule 8">
+            </div>
+            <div>
+                <img src="vehicule9.jpg" alt="Véhicule 9">
+            </div>
+            <div>
+                <img src="vehicule10.jpg" alt="Véhicule 10">
+            </div>
+        </div>
+    </section>
+    <section id="motos">
+        <h2 style="font-size: 2.5em;">Nos Motos</h2>
+        <div class="image-container">
+            <!-- Ajoutez vos images ici -->
+            <div>
+                <img src="moto1.jpg" alt="Moto 1">
+            </div>
+            <div>
+                <img src="moto2.jpg" alt="Moto 2">
+            </div>
+            <div>
+                <img src="moto3.jpg" alt="Moto 3">
+            </div>
+            <div>
+                <img src="moto4.jpg" alt="Moto 4">
+            </div>
+            <div>
+                <img src="moto5.jpg" alt="Moto 5">
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <h2 style="font-size: 2.5em;">À propos de nous</h2>
+        <!-- Ajoutez du contenu à propos de votre entreprise ici -->
+    </section>
+    <section id="contact">
+        <h2 style="font-size: 2.5em;">Contactez-nous</h2>
+        <!-- Ajoutez un formulaire de contact ou d'autres informations de contact ici -->
+    </section>
+    <footer>
         <p>&copy; 2024 ZLocation</p>
     </footer>
+    <script>
+        // Fonction pour accélérer le défilement
+        function accelerateScroll() {
+            var scrollSpeed = 1; // Vitesse de défilement initiale
+            var scrollInterval = setInterval(function() {
+                // Augmenter la vitesse de défilement à chaque intervalle
+                window.scrollBy(0, scrollSpeed);
+                // Augmenter la vitesse de défilement à chaque intervalle
+                scrollSpeed += 1;
+                // Si la fenêtre est en bas de la page, arrêtez le défilement
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    clearInterval(scrollInterval);
+                }
+            }, 10); // Interval de défilement
+        }
+    </script>
 </body>
 </html>
